@@ -7,16 +7,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Random;
-import java.util.stream.IntStream;
 
-import org.apache.http.protocol.HTTP;
 
 import com.google.gson.Gson;
 
@@ -80,6 +73,8 @@ public class Skiers extends HttpServlet {
 
         
         fp.put(id, fp.getOrDefault(id, 0) + 1);
+        System.out.printf("Task %d skipped %dtimes\n",id,fp.getOrDefault(id, 0));
+        
 
 
     }

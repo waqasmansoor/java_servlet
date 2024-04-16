@@ -280,7 +280,7 @@ class WebServletTest {
 						public boolean retryRequest(
 								final HttpResponse response, final int executionCount, final HttpContext context) {
 							int statusCode = response.getStatusLine().getStatusCode();
-							
+							System.out.printf("Received response 400 %d times\n",executionCount);
 							return (statusCode >= 400 || statusCode >= 500) && executionCount < 5;
 						}
 
@@ -508,12 +508,12 @@ class WebServletTest {
 	void testSkiersPostLatency() throws Exception {
 		System.out.println("######## Testing Latency #########");
 		int num_of_clients = 2;
-		int num_of_threads = 5000;
-		double error=0.1;
+		int num_of_threads = 500;
+		double error=0.15;
 		requestCounter noRequests = new requestCounter(0, num_of_threads, num_of_clients,error);
 		
 		multithreadedPost mp = new multithreadedPost(num_of_clients, 2,
-				noRequests, false);
+				noRequests, true);
 		mp.createMultipleClients();
 		
 

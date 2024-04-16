@@ -3,9 +3,7 @@ package org.example;
 
 // import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
-// import org.eclipse.jetty.server.ServerConnector;
-// import org.eclipse.jetty.server.handler.ContextHandler;
-// import org.eclipse.jetty.servlet.ServletHandler;
+
 import org.eclipse.jetty.util.resource.Resource;
 // import org.eclipse.jetty.util.thread.QueuedThreadPool;
 import org.eclipse.jetty.webapp.WebAppContext;
